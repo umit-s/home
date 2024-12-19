@@ -3,33 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
+    <title>Dynamic Image Gallery</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Image Gallery</h1>
-    <div class="gallery">
-        <a href="#modal1" class="image-link">
-            <img src="images/100_0505.jpg" alt="Image 1">
-        </a>
-        <a href="#modal2" class="image-link">
-            <img src="images/100_0505.jpg" alt="Image 2">
-        </a>
-        <!-- Add more images as needed -->
-    </div>
+    <div id="gallery" class="gallery"></div> <!-- Dynamic content goes here -->
 
-    <!-- Modal for Image 1 -->
-    <div id="modal1" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" src="images/image1.jpg" alt="Image 1">
-        <div class="caption">Details about Image 1</div>
-    </div>
-
-    <!-- Modal for Image 2 -->
-    <div id="modal2" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" src="images/image2.jpg" alt="Image 2">
-        <div class="caption">Details about Image 2</div>
+    <!-- Modal container (hidden by default) -->
+    <div id="modal" class="modal">
+        <span id="close" class="close">&times;</span>
+        <img id="modalImage" class="modal-content" alt="Expanded Image">
+        <div id="caption" class="caption"></div>
     </div>
 
     <script src="js/scripts.js"></script>
