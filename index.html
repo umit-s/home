@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        <a href="#modal1" class="image-link">
+            <img src="images/image1.jpg" alt="Image 1">
+        </a>
+        <a href="#modal2" class="image-link">
+            <img src="images/image2.jpg" alt="Image 2">
+        </a>
+        <!-- Add more images as needed -->
+    </div>
+
+    <!-- Modal for Image 1 -->
+    <div id="modal1" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" src="images/image1.jpg" alt="Image 1">
+        <div class="caption">Details about Image 1</div>
+    </div>
+
+    <!-- Modal for Image 2 -->
+    <div id="modal2" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" src="images/image2.jpg" alt="Image 2">
+        <div class="caption">Details about Image 2</div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
