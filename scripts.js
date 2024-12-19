@@ -1,29 +1,43 @@
-// Get all modals
-const modals = document.querySelectorAll(".modal");
+document.addEventListener("DOMContentLoaded", () => {
+    const gallery = document.getElementById("gallery");
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modalImage");
+    const caption = document.getElementById("caption");
+    const closeModal = document.getElementById("close");
 
-// Close modal when clicking on the close button or outside the modal
-modals.forEach(modal => {
-    const closeBtn = modal.querySelector(".close");
+    // List of image filenames (replace with actual filenames or automate generation if possible)
+    const imageFiles = [
+        "image1.jpg",
+        "image2.jpg",
+        "image3.jpg",
+        // Add more filenames here
+    ];
 
-    closeBtn.addEventListener("click", () => {
+    // Dynamically create gallery images
+    imageFiles.forEach((file) => {
+        const img = document.createElement("img");
+        img.src = `images/${file}`;
+        img.alt = file;
+        img.classList.add("gallery-image");
+
+        img.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImage.src = img.src;
+            caption.textContent = img.alt; // Use file name as caption
+        });
+
+        gallery.appendChild(img);
+    });
+
+    // Close modal when the close button is clicked
+    closeModal.addEventListener("click", () => {
         modal.style.display = "none";
     });
 
+    // Close modal when clicking outside the image
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
             modal.style.display = "none";
         }
-    });
-});
-
-// Open modal when clicking on an image
-const links = document.querySelectorAll(".image-link");
-
-links.forEach(link => {
-    link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const modalId = link.getAttribute("href").substring(1);
-        const modal = document.getElementById(modalId);
-        modal.style.display = "block";
     });
 });
